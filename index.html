@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width =decive-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page - With Background Video Slider| Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">ChinCha</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">HOME</a>
+                <a href="Drama.html">COREA</a>
+            </div>
+        </div>
+    </header>
+    <section class="HOME">
+        <img class="img-slide active" src="https://artworks.thetvdb.com/banners/v4/series/428076/backgrounds/65c0e58d15a48.jpg" autoplay muted loop></img>
+        <img class="img-slide" src="https://i.pinimg.com/originals/11/a4/e3/11a4e350abd3851380ff5ea2fc281795.jpg" autoplay muted loop></img>
+        <img class="img-slide" src="https://i.pinimg.com/originals/23/d2/a8/23d2a8f351a825bc2fd914ef0e5ae0c0.jpg" autoplay muted loop ></img>
+        <div class="content active">
+            <h1>Wedding<br><span>Impossible</span></h1>
+            <p>Lee Do-Han se vuelve hacia su amiga Na A-Jeong y le pregunta si actuaría como su esposa y nuera de su familia.
+            Ella acepta la oferta y se prepara para desempeñar el primer papel principal en su vida como la esposa de Lee Do-Han,
+            Lee Ji-Han, que es el hermano menor de Lee Do-Han intenta evitar la boda de su hermano y trae a Yoon Chae-Won  a la
+            escena como la posible novia de su hermano.</p><BR>
+            <br><a href="WeddingImposible.html">Leer Más</a>
+        </div>
+        <div class="content">
+            <h1>Pyramid<br><span>Game</span></h1>
+            <p>La quinta clase de las alumnas de segundo grado de la Escuela Secundaria Femenina de Baekyeon,
+            donde los acosadores son elegidos por votación secreta una vez al mes, donde "perpetradores,
+            víctimas y espectadores" están todos mezclados, y los estudiantes que se ven arrastrados cada vez más
+            a la violencia se involucran en una brutal guerra de clasificación de supervivencia</p> <br>
+            <br><a href="PiramidGame.html">Leer Más</a>
+        </div>
+        <div class="content">
+            <h1>20th<br><span>Century Girl</span></h1>
+            <p>>Bo Ra es la mejor amiga de Yeon Du, quien asiste a la misma escuela.
+                Yeon Du está enamorada de Hyun Jin. Ella le pide a Bo Ra que averigüe todo sobre Hyun Jin y va
+                a los EE. UU. para someterse a una cirugía de corazón. Después de eso, Bo Ra comienza a observar
+                a Hyun Jin de cerca y se enamora de él.</p><br>
+            <br><a href="20thCenturyGirl.html">Leer Más</a>
+        </div>
+        <div class="media-icons">
+           <a href="es-la.facebook.comFacebook"><i class="fab fa-facebook"></i></a>
+           <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+           <a href="twitter.com"><i class="fab fa-twitter"></i></a> 
+        </div>
+    </div>
+        <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+
+//javascript of responsive navigation menu
+const menubtn = document.querySelector(".menu-btn");
+const navigation = document.querySelector(".navigation");
+
+menubtn.addEventListener("click",() =>{
+    menubtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+});
+//javascript for video slider navigation
+const btns = document.querySelectorAll(".nav-btn");
+const slides = document.querySelectorAll(".img-slide");
+const contents = document.querySelectorAll(".content");
+
+var sliderNav = function(manual){
+btns.forEach((btn) =>{
+    btn.classList.remove("active")
+    });
+
+slides.forEach((slide) =>{
+    slide.classList.remove("active")
+    });
+
+contents.forEach((content) =>{
+    content.classList.remove("active")
+    });
+
+btns[manual].classList.add("active");
+slides[manual].classList.add("active");
+contents[manual].classList.add("active");
+
+}
+
+btns.forEach((btn, i) => {
+    btn.addEventListener("click",()=>{
+        sliderNav(i);
+    });
+});
+    </script>
+</body>
+</html>
