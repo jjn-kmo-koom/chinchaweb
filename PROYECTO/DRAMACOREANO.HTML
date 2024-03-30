@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=decive-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page - With Background Video Slider| Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">DRAMAS COREANOS</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="INDEX.HTML">HOME</a>
+                <a href="DRAMA.HTML">DRAMAS</a>
+                <a href="DRAMACOREANOBL.HTML" >LGBT+</a>
+            </div>
+        </div>
+    </header>
+        <section class="HOME">
+            <video class="video-slide active" src="FLEXXCOP.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="CONCRETEUTOPIA.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="APARTAMENT4041 (2).mp4" autoplay muted loop ></video>
+            <div class="content active">
+                <h1>Flex x <br><span>Cop</span></h1>
+                <p> Un infantil magnate de tercera generación se convierte en detective del equipo contra el crimen violento. 
+                    “Dinero por dinero, espalda por espalda” historia de la investigación FLEX </p><BR>
+                <a href="FlexxCop.html">Leer Más</a>
+            </div>
+            <div class="content">
+                <h1>Concrete <br><span>Utopia</span></h1>
+                <p>Un terremoto deja en pie solo un edificio en Seul. Los sobreviviente buscan refugio en el complejode apartamentos Hwang Gung, pero los residentes no quieren que desconocidos entren en su propiedad</p> <br>
+                <a href="ConcreteUtopia.html">Leer Más</a>
+            </div>
+            <div class="content">
+                <h1>Apartament<br><span>404</span></h1>
+                <p>Seis personas descubren la verdad detras de acontecimientos extraordinarios en sus residencias</p><br>
+                <a href="Apartament404.html">Leer Más</a>
+            </div>
+            <div class="media-icons">
+               <a href="#"><i class="fab fa-facebook"></i></a>
+               <a href="#"><i class="fab fa-instagram"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a> 
+            </div>
+        </div>
+            <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            </div>
+        </section>
+    
+        <script type="text/javascript">
+    
+    //javascript of responsive navigation menu
+    const menubtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+    
+    menubtn.addEventListener("click",() =>{
+        menubtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+    //javascript for video slider navigation
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+    
+    var sliderNav = function(manual){
+    btns.forEach((btn) =>{
+        btn.classList.remove("active")
+        });
+    
+    slides.forEach((slide) =>{
+        slide.classList.remove("active")
+        });
+    
+    contents.forEach((content) =>{
+        content.classList.remove("active")
+        });
+    
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+    
+    }
+    
+    btns.forEach((btn, i) => {
+        btn.addEventListener("click",()=>{
+            sliderNav(i);
+        });
+    });
+        </script>
+
+
+    <link rel="stylesheet" href="style - copia.css">
+<br>
+<div class="container">
+    <div class="content-container">
+        <div class="featured-content"
+            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('QUEENOFTEARS1.jpg');">
+            <img class="featured-title" src="" alt="">
+            <p class="featured-desc">“El matrimonio del siglo… ¿La guerra del siglo?”
+                La tercera generación del conglomerado Queens Group, la reina de los grandes almacenes, 'Hong Hae-in'. Baek Hyun-woo, hijo del jefe de Yongduri y rey ​​de los supermercados.
+                Una crisis vertiginosa y un reinicio milagroso de una historia de amor de una pareja de 3 años.</p>
+            <a href="FlexxCop.html">Leer Más</a> 
+        </div>
+    </body>
+    </html>
